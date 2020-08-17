@@ -19,7 +19,7 @@ const Header = () => {
                     <AppBar position="fixed" className={classes.app_bar_container}>
                         <Toolbar>
                         <Typography variant="h5" className={classes.title}>
-                            Knowledge Chest
+                            Treasure Chest
                         </Typography>
                         </Toolbar>
                     </AppBar>
