@@ -1,9 +1,11 @@
 import React from 'react';
+// Component.
+import GridComponent from "./components/Grid/Grid"
 
 function App() {
   return (
-    <div className="App">
-      <h1>Quiz App</h1>
+    <div>
+      <GridComponent />
     </div>
   );
 }
