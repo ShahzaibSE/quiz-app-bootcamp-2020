@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { spacing } from '@material-ui/system';
 
 
-export const categoryStyle = makeStyles({
+export const categoryStyle = makeStyles(theme => ({
     root: {
       minWidth: 80,
       minHeight: 250
@@ -17,5 +17,16 @@ export const categoryStyle = makeStyles({
     },
     pos: {
       marginBottom: 12,
+    },
+    card_heading: {
+      fontWeight:"bold",
+      fontSize:18,
+      textAlign:'center'
+    },
+    btn: {
+      margin: theme.spacing(1),
+      minWidth: '11rem',
+      marginLeft: 10,
+      marginRight: 10,
     }
-  });
+  }));

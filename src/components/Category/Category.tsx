@@ -16,15 +16,15 @@ const Category = () => {
         <div>
             <Card className={classes.root}>
                 <CardContent>
-                    <Typography variant="h6">General Knowledge</Typography>
+                    <Typography variant="subtitle1" className={classes.card_heading}>General Knowledge</Typography>
                     <div>
                         <img className="image_container" src={general_knowledge} 
                             alt="General Knowledege" width={40} height={40} />
                     </div>
                 </CardContent>
-                {/* <CardActions>
-                    <Button size="small">Learn More</Button>
-                </CardActions> */}
+                <CardActions>
+                    <Button className={classes.btn} variant="contained" color="secondary">Start</Button>
+                </CardActions>
             </Card>
         </div>    
     )
