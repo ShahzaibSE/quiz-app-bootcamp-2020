@@ -4,8 +4,7 @@ import { spacing } from '@material-ui/system';
 
 export const categoryStyle = makeStyles(theme => ({
     root: {
-      minWidth: 80,
-      minHeight: 250
+      flexGrow:1
     },
     bullet: {
       display: 'inline-block',
@@ -28,5 +27,6 @@ export const categoryStyle = makeStyles(theme => ({
       minWidth: '11rem',
       marginLeft: 10,
       marginRight: 10,
+      flexGrow:1
     }
   }));
