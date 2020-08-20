@@ -13,12 +13,17 @@ const CategoryList = () => {
     return (
        <div className="category_list_container"> 
             <Grid container spacing={3}>
-                <Grid item sm={12} md={2} lg={2}>
+                {/* <Grid item sm={12} md={2} lg={2}>
                         <Category />
                 </Grid>
                 <Grid item sm={12} md={2} lg={2}>
                         <Category />
-                </Grid>
+                </Grid> */}
+                {categories.map((category:any) => (
+                    <Grid item sm={12} md={2} lg={2}>
+                        <Category category={category}/>
+                    </Grid>
+                ))}
             </Grid>
        </div> 
     )
