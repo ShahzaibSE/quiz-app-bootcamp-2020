@@ -1,9 +1,10 @@
-import React, {useContext} from 'react'
+import React, {useState,useContext} from 'react'
 import {Grid, Card} from "@material-ui/core"
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import {AnimationWrapper} from "react-hover-animation"
 // Assets
 import "./CategoryList.scss"
 import {categoryStyle} from "./CateogoryList.style"
@@ -11,10 +12,17 @@ import {categoryStyle} from "./CateogoryList.style"
 import {CategoryContext} from "./categories_context/Category.context"
 
 const CategoryList = () => {
+    const [isCardHover, setCardHover] = useState(false)
     const category_classes = categoryStyle()
     const {categories: {general_knowledge,
                         geogprahy, video_games, 
-                        history, mathematics, computers}} = useContext(CategoryContext)
+                        history, mathematics, computers}} = useContext(CategoryContext)  
+    
+    const onCardHoverEvent = () => {
+        console.log("On Mouse Over on card.")
+        setCardHover(!isCardHover)
+    }
+                                  
     return (
        <div className="category_list_container"> 
             <Grid container spacing={3}>
@@ -30,6 +38,7 @@ const CategoryList = () => {
                     </Grid>
                 ))} */}
                 <Grid item sm={12} md={2} lg={2}>
+                   <AnimationWrapper>
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -45,9 +54,11 @@ const CategoryList = () => {
                             </Button>
                         </CardActions>
                     </Card>
+                    </AnimationWrapper>
                 </Grid>
 
                 <Grid item sm={12} md={2} lg={2}>
+                   <AnimationWrapper> 
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -63,9 +74,11 @@ const CategoryList = () => {
                             </Button>
                         </CardActions>
                     </Card>
+                   </AnimationWrapper> 
                 </Grid>
 
                 <Grid item sm={12} md={2} lg={2}>
+                  <AnimationWrapper>  
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -81,8 +94,10 @@ const CategoryList = () => {
                             </Button>
                         </CardActions>
                     </Card>
+                   </AnimationWrapper> 
                 </Grid>
                 <Grid item sm={12} md={2} lg={2}>
+                   <AnimationWrapper> 
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -98,9 +113,11 @@ const CategoryList = () => {
                             </Button>
                         </CardActions>
                     </Card>
+                   </AnimationWrapper> 
                 </Grid>
 
                 <Grid item sm={12} md={2} lg={2}>
+                   <AnimationWrapper> 
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -116,9 +133,11 @@ const CategoryList = () => {
                             </Button>
                         </CardActions>
                     </Card>
+                   </AnimationWrapper> 
                 </Grid>
 
                 <Grid item sm={12} md={2} lg={2}>
+                   <AnimationWrapper>
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -134,6 +153,7 @@ const CategoryList = () => {
                             </Button>
                         </CardActions>
                     </Card>
+                   </AnimationWrapper> 
                 </Grid>
 
             </Grid>

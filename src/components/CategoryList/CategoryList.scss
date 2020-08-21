@@ -14,3 +14,12 @@
     width:100%;
     height:100%;
 }
+
+.category_container{
+    flex-grow: 1;
+}
+
+.category_container_hover{
+    flex-grow: 1;
+    transform: scale(1.5);
+}

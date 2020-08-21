@@ -1,6 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { spacing } from '@material-ui/system';
-
 
 export const categoryStyle = makeStyles(theme => ({
     root: {
@@ -29,4 +27,8 @@ export const categoryStyle = makeStyles(theme => ({
       marginRight: 10,
       flexGrow:1
     }
-  }));
+}));
+
+export const animation_styles = {
+     
+}
