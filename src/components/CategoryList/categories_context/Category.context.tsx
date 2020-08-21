@@ -9,12 +9,12 @@ import video_game_pic from "./../../images/video-games-pic.png"
 import computer_pic from "./../../images/computer-pic.png"
 
 const categories: any = [
-    {name:"General Knowledge", image: general_knowledge},
-    {name:"Geography", image: geography_pic},
-    {name:"History", image: history_pic},
-    {name:"Video Games", image: video_game_pic},
-    {name:"Mathematics", image: mathematics_pic},
-    {name:"Computers", image: computer_pic}
+    {id:9, name:"General Knowledge", image: general_knowledge},
+    {id:22, name:"Geography", image: geography_pic},
+    {id:23, name:"History", image: history_pic},
+    {id:15, name:"Video Games", image: video_game_pic},
+    {id:19, name:"Mathematics", image: mathematics_pic},
+    {id:18, name:"Computers", image: computer_pic}
 ]
 
 const initialState = {
