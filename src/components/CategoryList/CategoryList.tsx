@@ -38,7 +38,10 @@ const CategoryList = () => {
                     </Grid>
                 ))} */}
                 <Grid item sm={12} md={2} lg={2}>
-                   <AnimationWrapper>
+                    <AnimationWrapper config={{
+                                transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                opacity: {initial:'1',onHover:'1'}
+                            }}>
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -58,7 +61,10 @@ const CategoryList = () => {
                 </Grid>
 
                 <Grid item sm={12} md={2} lg={2}>
-                   <AnimationWrapper> 
+                    <AnimationWrapper config={{
+                                    transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                    opacity: {initial:'1',onHover:'1'}
+                                }}>
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -78,7 +84,10 @@ const CategoryList = () => {
                 </Grid>
 
                 <Grid item sm={12} md={2} lg={2}>
-                  <AnimationWrapper>  
+                    <AnimationWrapper config={{
+                                    transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                    opacity: {initial:'1',onHover:'1'}
+                                }}>
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -97,7 +106,10 @@ const CategoryList = () => {
                    </AnimationWrapper> 
                 </Grid>
                 <Grid item sm={12} md={2} lg={2}>
-                   <AnimationWrapper> 
+                   <AnimationWrapper config={{
+                                transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                opacity: {initial:'1',onHover:'1'}
+                            }}>
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -117,7 +129,10 @@ const CategoryList = () => {
                 </Grid>
 
                 <Grid item sm={12} md={2} lg={2}>
-                   <AnimationWrapper> 
+                    <AnimationWrapper config={{
+                                    transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                    opacity: {initial:'1',onHover:'1'}
+                                }}>
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
@@ -137,7 +152,10 @@ const CategoryList = () => {
                 </Grid>
 
                 <Grid item sm={12} md={2} lg={2}>
-                   <AnimationWrapper>
+                    <AnimationWrapper config={{
+                                    transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                    opacity: {initial:'1',onHover:'1'}
+                                }}>
                     <Card className={category_classes.root}>
                         <CardContent>
                             <Typography variant="subtitle1" className={category_classes.card_heading}>
