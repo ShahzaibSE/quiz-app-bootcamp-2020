@@ -24,8 +24,10 @@
     transform: scale(1.5);
 }
 
+/* --- CSS for Difficulty Buttons --- */
+
 .difficulty_container {
-    margin:100px auto;
+    margin:120px auto;
     // margin-left: 37px;
     // margin: auto;
     width: 40%;
@@ -38,6 +40,10 @@
     height:80px;
     margin-right:10px;
     font-size:20px !important;
+}
+
+#easy_button{
+    background-color:#3f51b5 !important;
 }
 
 #medium_button{
