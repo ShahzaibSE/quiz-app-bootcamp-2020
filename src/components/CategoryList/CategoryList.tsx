@@ -61,152 +61,167 @@ const CategoryList = () => {
     }else{
                                   
         return (
-        <div className="category_list_container"> 
-                <Grid container spacing={3}>
-                    <Grid item sm={12} md={2} lg={2}>
-                        <AnimationWrapper config={{
-                                    transform:{initial:'scale(1)',onHover:'scale(1.1)'},
-                                    opacity: {initial:'1',onHover:'1'}
-                                }}>
-                        <Card className={category_classes.root}>
-                            <CardContent>
-                                <Typography variant="subtitle1" className={category_classes.card_heading}>
-                                            {general_knowledge.name}</Typography>
-                                <div>
-                                    <img className="image_container" src={general_knowledge.image} 
-                                        alt="General Knowledege" width={40} height={40} />
-                                </div>
-                            </CardContent>
-                            <CardActions>
-                                <Button className={category_classes.btn} variant="contained" color="secondary"
-                                        onClick={()=>{start_quiz('General Knowledge')}}>
-                                    Start Quiz
-                                </Button>
-                            </CardActions>
-                        </Card>
-                        </AnimationWrapper>
+        <div>   
+            <div className="difficulty_container">
+                <Grid container spacing={2}>
+                    <Grid item sm={12} md={4} lg={4}>
+                        <Button className="button_dimensions" variant="outlined" color="primary">EASY</Button>
                     </Grid>
-
-                    <Grid item sm={12} md={2} lg={2}>
-                        <AnimationWrapper config={{
-                                        transform:{initial:'scale(1)',onHover:'scale(1.1)'},
-                                        opacity: {initial:'1',onHover:'1'}
-                                    }}>
-                        <Card className={category_classes.root}>
-                            <CardContent>
-                                <Typography variant="subtitle1" className={category_classes.card_heading}>
-                                            {geogprahy.name}</Typography>
-                                <div>
-                                    <img className="image_container" src={geogprahy.image} 
-                                        alt="Geography" width={40} height={40} />
-                                </div>
-                            </CardContent>
-                            <CardActions>
-                                <Button className={category_classes.btn} variant="contained" color="secondary"
-                                onClick={()=>{start_quiz('Geography')}}>
-                                    Start Quiz
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </AnimationWrapper> 
+                    <Grid item sm={12} md={4} lg={4}>
+                        <Button className="button_dimensions" variant="outlined" color="secondary">MEDIUM</Button>
                     </Grid>
-
-                    <Grid item sm={12} md={2} lg={2}>
-                        <AnimationWrapper config={{
-                                        transform:{initial:'scale(1)',onHover:'scale(1.1)'},
-                                        opacity: {initial:'1',onHover:'1'}
-                                    }}>
-                        <Card className={category_classes.root}>
-                            <CardContent>
-                                <Typography variant="subtitle1" className={category_classes.card_heading}>
-                                            {video_games.name}</Typography>
-                                <div>
-                                    <img className="image_container" src={video_games.image} 
-                                        alt="Video Games" width={40} height={40} />
-                                </div>
-                            </CardContent>
-                            <CardActions>
-                                <Button className={category_classes.btn} variant="contained" color="secondary"
-                                 onClick={()=>{start_quiz('Video Games')}}>
-                                    Start Quiz
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </AnimationWrapper> 
+                    <Grid item sm={12} md={4} lg={4}>
+                        <Button className="button_dimensions" variant="outlined" color="secondary">HARD</Button>
                     </Grid>
-                    <Grid item sm={12} md={2} lg={2}>
-                    <AnimationWrapper config={{
-                                    transform:{initial:'scale(1)',onHover:'scale(1.1)'},
-                                    opacity: {initial:'1',onHover:'1'}
-                                }}>
-                        <Card className={category_classes.root}>
-                            <CardContent>
-                                <Typography variant="subtitle1" className={category_classes.card_heading}>
-                                            {history.name}</Typography>
-                                <div>
-                                    <img className="image_container" src={history.image} 
-                                        alt="History" width={40} height={40} />
-                                </div>
-                            </CardContent>
-                            <CardActions>
-                                <Button className={category_classes.btn} variant="contained" color="secondary"
-                                 onClick={()=>{start_quiz('History')}}>
-                                    Start Quiz
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </AnimationWrapper> 
-                    </Grid>
-
-                    <Grid item sm={12} md={2} lg={2}>
-                        <AnimationWrapper config={{
-                                        transform:{initial:'scale(1)',onHover:'scale(1.1)'},
-                                        opacity: {initial:'1',onHover:'1'}
-                                    }}>
-                        <Card className={category_classes.root}>
-                            <CardContent>
-                                <Typography variant="subtitle1" className={category_classes.card_heading}>
-                                            {mathematics.name}</Typography>
-                                <div>
-                                    <img className="image_container" src={mathematics.image} 
-                                        alt="Mathematics" width={40} height={40} />
-                                </div>
-                            </CardContent>
-                            <CardActions>
-                                <Button className={category_classes.btn} variant="contained" color="secondary"
-                                 onClick={()=>{start_quiz('Mathematics')}}>
-                                    Start Quiz
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </AnimationWrapper> 
-                    </Grid>
-
-                    <Grid item sm={12} md={2} lg={2}>
-                        <AnimationWrapper config={{
-                                        transform:{initial:'scale(1)',onHover:'scale(1.1)'},
-                                        opacity: {initial:'1',onHover:'1'}
-                                    }}>
-                        <Card className={category_classes.root}>
-                            <CardContent>
-                                <Typography variant="subtitle1" className={category_classes.card_heading}>
-                                            {computers.name}</Typography>
-                                <div>
-                                    <img className="image_container" src={computers.image} 
-                                        alt="Computers" width={40} height={40} />
-                                </div>
-                            </CardContent>
-                            <CardActions>
-                                <Button className={category_classes.btn} variant="contained" color="secondary"
-                                 onClick={()=>{start_quiz('Computers')}}>
-                                    Start Quiz
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </AnimationWrapper> 
-                    </Grid>
-
                 </Grid>
+            </div>    
+            <div className="category_list_container"> 
+                    <Grid container spacing={3}>
+                        <Grid item sm={12} md={2} lg={2}>
+                            <AnimationWrapper config={{
+                                        transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                        opacity: {initial:'1',onHover:'1'}
+                                    }}>
+                            <Card className={category_classes.root}>
+                                <CardContent>
+                                    <Typography variant="subtitle1" className={category_classes.card_heading}>
+                                                {general_knowledge.name}</Typography>
+                                    <div>
+                                        <img className="image_container" src={general_knowledge.image} 
+                                            alt="General Knowledege" width={40} height={40} />
+                                    </div>
+                                </CardContent>
+                                <CardActions>
+                                    <Button className={category_classes.btn} variant="contained" color="secondary"
+                                            onClick={()=>{start_quiz('General Knowledge')}}>
+                                        Start Quiz
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                            </AnimationWrapper>
+                        </Grid>
+
+                        <Grid item sm={12} md={2} lg={2}>
+                            <AnimationWrapper config={{
+                                            transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                            opacity: {initial:'1',onHover:'1'}
+                                        }}>
+                            <Card className={category_classes.root}>
+                                <CardContent>
+                                    <Typography variant="subtitle1" className={category_classes.card_heading}>
+                                                {geogprahy.name}</Typography>
+                                    <div>
+                                        <img className="image_container" src={geogprahy.image} 
+                                            alt="Geography" width={40} height={40} />
+                                    </div>
+                                </CardContent>
+                                <CardActions>
+                                    <Button className={category_classes.btn} variant="contained" color="secondary"
+                                    onClick={()=>{start_quiz('Geography')}}>
+                                        Start Quiz
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                        </AnimationWrapper> 
+                        </Grid>
+
+                        <Grid item sm={12} md={2} lg={2}>
+                            <AnimationWrapper config={{
+                                            transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                            opacity: {initial:'1',onHover:'1'}
+                                        }}>
+                            <Card className={category_classes.root}>
+                                <CardContent>
+                                    <Typography variant="subtitle1" className={category_classes.card_heading}>
+                                                {video_games.name}</Typography>
+                                    <div>
+                                        <img className="image_container" src={video_games.image} 
+                                            alt="Video Games" width={40} height={40} />
+                                    </div>
+                                </CardContent>
+                                <CardActions>
+                                    <Button className={category_classes.btn} variant="contained" color="secondary"
+                                    onClick={()=>{start_quiz('Video Games')}}>
+                                        Start Quiz
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                        </AnimationWrapper> 
+                        </Grid>
+                        <Grid item sm={12} md={2} lg={2}>
+                        <AnimationWrapper config={{
+                                        transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                        opacity: {initial:'1',onHover:'1'}
+                                    }}>
+                            <Card className={category_classes.root}>
+                                <CardContent>
+                                    <Typography variant="subtitle1" className={category_classes.card_heading}>
+                                                {history.name}</Typography>
+                                    <div>
+                                        <img className="image_container" src={history.image} 
+                                            alt="History" width={40} height={40} />
+                                    </div>
+                                </CardContent>
+                                <CardActions>
+                                    <Button className={category_classes.btn} variant="contained" color="secondary"
+                                    onClick={()=>{start_quiz('History')}}>
+                                        Start Quiz
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                        </AnimationWrapper> 
+                        </Grid>
+
+                        <Grid item sm={12} md={2} lg={2}>
+                            <AnimationWrapper config={{
+                                            transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                            opacity: {initial:'1',onHover:'1'}
+                                        }}>
+                            <Card className={category_classes.root}>
+                                <CardContent>
+                                    <Typography variant="subtitle1" className={category_classes.card_heading}>
+                                                {mathematics.name}</Typography>
+                                    <div>
+                                        <img className="image_container" src={mathematics.image} 
+                                            alt="Mathematics" width={40} height={40} />
+                                    </div>
+                                </CardContent>
+                                <CardActions>
+                                    <Button className={category_classes.btn} variant="contained" color="secondary"
+                                    onClick={()=>{start_quiz('Mathematics')}}>
+                                        Start Quiz
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                        </AnimationWrapper> 
+                        </Grid>
+
+                        <Grid item sm={12} md={2} lg={2}>
+                            <AnimationWrapper config={{
+                                            transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                            opacity: {initial:'1',onHover:'1'}
+                                        }}>
+                            <Card className={category_classes.root}>
+                                <CardContent>
+                                    <Typography variant="subtitle1" className={category_classes.card_heading}>
+                                                {computers.name}</Typography>
+                                    <div>
+                                        <img className="image_container" src={computers.image} 
+                                            alt="Computers" width={40} height={40} />
+                                    </div>
+                                </CardContent>
+                                <CardActions>
+                                    <Button className={category_classes.btn} variant="contained" color="secondary"
+                                    onClick={()=>{start_quiz('Computers')}}>
+                                        Start Quiz
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                        </AnimationWrapper> 
+                        </Grid>
+
+                    </Grid>
+            </div>
         </div> 
         )
         }
