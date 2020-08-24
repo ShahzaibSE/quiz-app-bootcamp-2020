@@ -64,7 +64,7 @@ const CategoryList = () => {
         return (
         <div>   
             <div className="difficulty_container">
-                <Grid container spacing={2}>
+                <Grid container spacing={1}>
                     <Grid item sm={12} md={4} lg={4}>
                         <Button className="button_dimensions" variant="contained" color="primary">EASY</Button>
                     </Grid>
