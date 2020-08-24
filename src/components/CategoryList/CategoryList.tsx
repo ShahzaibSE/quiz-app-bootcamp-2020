@@ -3,6 +3,7 @@ import {Grid, Card} from "@material-ui/core"
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import {red,green} from "@material-ui/core/colors"
 import Typography from '@material-ui/core/Typography';
 import {AnimationWrapper} from "react-hover-animation"
 // Assets
@@ -65,13 +66,13 @@ const CategoryList = () => {
             <div className="difficulty_container">
                 <Grid container spacing={2}>
                     <Grid item sm={12} md={4} lg={4}>
-                        <Button className="button_dimensions" variant="outlined" color="primary">EASY</Button>
+                        <Button className="button_dimensions" variant="contained" color="primary">EASY</Button>
                     </Grid>
                     <Grid item sm={12} md={4} lg={4}>
-                        <Button className="button_dimensions" variant="outlined" color="secondary">MEDIUM</Button>
+                        <Button id="medium_button" className="button_dimensions" variant="contained" color="secondary">MEDIUM</Button>
                     </Grid>
                     <Grid item sm={12} md={4} lg={4}>
-                        <Button className="button_dimensions" variant="outlined" color="secondary">HARD</Button>
+                        <Button id="hard_button" className="button_dimensions" variant="contained" color="secondary">HARD</Button>
                     </Grid>
                 </Grid>
             </div>    

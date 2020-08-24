@@ -26,15 +26,24 @@
 
 .difficulty_container {
     margin:100px auto;
-    // margin-left: 37%;
+    // margin-left: 37px;
     // margin: auto;
-    width: 50%;
+    width: 40%;
     // border: 3px solid green;
     padding: 10px;  
 }
 
 .button_dimensions {
-    width: 120px;
+    width: 150px;
     height:80px;
     margin-right:10px;
+    font-size:20px !important;
+}
+
+#medium_button{
+    background-color:#009688;
+}
+
+#hard_button{
+    background-color:#d32f2f;
 }
