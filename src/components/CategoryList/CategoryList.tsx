@@ -3,7 +3,6 @@ import {Grid, Card} from "@material-ui/core"
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import {red,green} from "@material-ui/core/colors"
 import Typography from '@material-ui/core/Typography';
 import {AnimationWrapper} from "react-hover-animation"
 // Assets
@@ -17,35 +16,68 @@ import Quiz from "./../Quiz/Quiz"
 const CategoryList = () => {
     const [isQuiz, setQuiz] = useState(false)
     const [categoryNumber, setCategoryNumber] = useState(0)
+    const [difficulty, setDifficulty] = useState("easy")
+    const [isEasyDifficulty, setEasyDifficultySelected] = useState(false)
+    const [isMediumDifficulty, setMediumDifficultySelected] = useState(false)
+    const [isHardDifficulty, setHardDifficultySelected] = useState(false)
     const category_classes = categoryStyle()
     const {categories: {general_knowledge,
                         geogprahy, video_games, 
                         history, mathematics, computers}} = useContext(CategoryContext)  
 
 
+    const select_difficulty = (selected_difficulty:string) => {
+        if (selected_difficulty === "easy") {
+            setDifficulty(selected_difficulty)
+            setEasyDifficultySelected(!isEasyDifficulty)
+            setMediumDifficultySelected(false)
+            setHardDifficultySelected(false)
+            console.log("Selected difficulty")
+            console.log(selected_difficulty)
+        }
+        if (selected_difficulty === "medium") {
+            setDifficulty(selected_difficulty)
+            setEasyDifficultySelected(false)
+            setMediumDifficultySelected(!isMediumDifficulty)
+            setHardDifficultySelected(false)
+            console.log("Selected difficulty")
+            console.log(selected_difficulty)
+        }
+        if (selected_difficulty === "hard") {
+            setDifficulty(selected_difficulty)
+            setEasyDifficultySelected(false)
+            setMediumDifficultySelected(false)
+            setHardDifficultySelected(!isHardDifficulty)
+            console.log("Selected difficulty")
+            console.log(selected_difficulty)
+        }
+    }
+
     const start_quiz = (category:any) => {
         console.log(`Category Name: ${category}`)
-        if (category == "General Knowledge"){
+        console.log("Difficulty State")
+        console.log(difficulty)
+        if (category === "General Knowledge"){
             setCategoryNumber(general_knowledge.id)
             setQuiz(!isQuiz)
         }
-        if(category == "Geography"){
+        if(category === "Geography"){
             setCategoryNumber(geogprahy.id)
             setQuiz(!isQuiz)
         } 
-        if(category == "Video Games"){
+        if(category === "Video Games"){
             setCategoryNumber(video_games.id)
             setQuiz(!isQuiz)
         } 
-        if(category == "History"){
+        if(category === "History"){
             setCategoryNumber(history.id)
             setQuiz(!isQuiz)
         } 
-        if(category == "Mathematics"){
+        if(category === "Mathematics"){
             setCategoryNumber(mathematics.id)
             setQuiz(!isQuiz)
         } 
-        if(category == "Computers"){
+        if(category === "Computers"){
             setCategoryNumber(computers.id)
             setQuiz(!isQuiz)
         } 
@@ -55,7 +87,7 @@ const CategoryList = () => {
         return(
             <Grid container>
                 <Grid item xs={12} sm={12} md={12} lg={12}>
-                    <Quiz category={categoryNumber}/>
+                    <Quiz category={categoryNumber} difficulty={difficulty}/>
                 </Grid>
             </Grid>
         )
@@ -66,13 +98,18 @@ const CategoryList = () => {
             <div className="difficulty_container">
                 <Grid container spacing={1}>
                     <Grid item sm={12} md={4} lg={4}>
-                        <Button className="button_dimensions" variant="contained" color="primary">EASY</Button>
+                        <Button id={isEasyDifficulty ? 'easy_difficulty_selected' : 'easy_button'}
+                            className="button_dimensions" variant="contained" color="primary" 
+                            onClick={()=>{select_difficulty('easy')}}>EASY</Button>
                     </Grid>
                     <Grid item sm={12} md={4} lg={4}>
-                        <Button id="medium_button" className="button_dimensions" variant="contained" color="secondary">MEDIUM</Button>
+                        <Button id={isMediumDifficulty ? 'medium_difficulty_selected' : 'medium_button'} 
+                                className="button_dimensions" variant="contained" color="secondary"
+                                onClick={()=>{select_difficulty('medium')}}>MEDIUM</Button>
                     </Grid>
                     <Grid item sm={12} md={4} lg={4}>
-                        <Button id="hard_button" className="button_dimensions" variant="contained" color="secondary">HARD</Button>
+                        <Button id={isHardDifficulty ? 'hard_difficulty_selected' : 'hard_button'}  className="button_dimensions" variant="contained" color="secondary"
+                                onClick={()=>{select_difficulty('hard')}}>HARD</Button>
                     </Grid>
                 </Grid>
             </div>    

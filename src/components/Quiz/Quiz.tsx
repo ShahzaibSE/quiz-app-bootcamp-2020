@@ -5,7 +5,8 @@ import {QuestionsAPI} from "./../api/index.api"
 import "./Quiz.scss"
 
 type QuizPropes = {
-    category: number 
+    category: number,
+    difficulty: string
 }
 
 const Quiz = ({category}:QuizPropes) => {
