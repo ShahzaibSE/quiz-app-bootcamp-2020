@@ -5,28 +5,30 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 // Assets.
-import {questionStyles} from "./Question.style"
+import {questionStyles} from "./Question.style";
+import "./Question.scss";
 
 const Question = () => {
     const classes = questionStyles()
     return (
+       <div> 
         <Card className={classes.root}>
             
             <CardContent>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
-                Word of the Day
+                Question 1
                 </Typography>
-                <Typography variant="body2" component="p">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
-                </Typography>
+                <p>Options 1</p>
+                <p>Options 2</p>
+                <p>Options 3</p>
+                <p>Options 4</p>
             </CardContent>
 
             <CardActions>
-                <Button size="small">Learn More</Button>
+                <Button size="small">Next</Button>
             </CardActions>
         </Card>
+      </div>  
     )
 }
 

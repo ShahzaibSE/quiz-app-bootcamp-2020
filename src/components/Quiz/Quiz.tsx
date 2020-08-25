@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import {Grid} from "@material-ui/core"
 // API.
 import {QuestionsAPI} from "./../api/index.api"
 // Assets.
@@ -29,7 +30,11 @@ const Quiz = ({category, difficulty}:QuizPropes) => {
     //
     return (
         <div className="quiz_container">
-            <Question/>
+          <Grid container alignItems="center" justify="center">
+               <Grid item xs={12} sm={12} md={6} lg={6}>
+                   <Question />
+               </Grid>
+            </Grid>  
             {/* {questions.map(question => (
                 <h2>{question.question}</h2>
             ))} */}
