@@ -3,6 +3,8 @@ import React, {useEffect} from 'react'
 import {QuestionsAPI} from "./../api/index.api"
 // Assets.
 import "./Quiz.scss"
+// Component
+import Question from "./../Question/Question"
 
 type QuizPropes = {
     category: number,
@@ -27,7 +29,7 @@ const Quiz = ({category, difficulty}:QuizPropes) => {
     //
     return (
         <div className="quiz_container">
-            <h1>Quiz started!</h1>
+            <Question/>
             {/* {questions.map(question => (
                 <h2>{question.question}</h2>
             ))} */}
