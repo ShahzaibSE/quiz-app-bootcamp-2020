@@ -22,7 +22,7 @@ type QuestionProps = {
 }
 
 
-const QuestionCard: React.FC = () => {
+const QuestionCard: React.FC<QuestionProps> = ({}) => {
     const classes = questionStyles()
     const [value, setValue] = React.useState('');
     const [error, setError] = React.useState(false);

@@ -7,6 +7,8 @@ import "./Quiz.scss"
 // Component
 import QuestionCard from "../QuestionCard/QuestionCard"
 
+const total_questions: number = 10
+
 type QuizPropes = {
     category: number,
     difficulty: string
@@ -22,6 +24,12 @@ const Quiz = ({category, difficulty}:QuizPropes) => {
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false)
     //
+    // Quiz handlers.
+    const startQuiz = async ()=>{}
+
+    const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {}
+
+    const nextQuestion = () => {}
 
     // Accessing API.
     // useEffect(()=>{
@@ -39,7 +47,14 @@ const Quiz = ({category, difficulty}:QuizPropes) => {
         <div className="quiz_container">
           <Grid container alignItems="center" justify="center">
                <Grid item xs={12} sm={12} md={6} lg={6}>
-                   <QuestionCard />
+                   {/* <QuestionCard 
+                     questionNum = {number + 1}
+                     totalQuestions = {total_questions}
+                     question = {questions[number].question}
+                     answers = {questions[number].answers}
+                     userAnswer = {userAnswers[number] ? userAnswers : undefined}
+                     callback = {checkAnswer}
+                   /> */}
                </Grid>
             </Grid>  
             {/* {questions.map(question => (
