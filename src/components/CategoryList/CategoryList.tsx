@@ -98,18 +98,33 @@ const CategoryList = () => {
             <div className="difficulty_container">
                 <Grid container spacing={1}>
                     <Grid item sm={12} md={4} lg={4}>
-                        <Button id={isEasyDifficulty ? 'easy_difficulty_selected' : 'easy_button'}
-                            className="button_dimensions" variant="contained" color="primary" 
-                            onClick={()=>{select_difficulty('easy')}}>EASY</Button>
+                        <AnimationWrapper config={{
+                                            transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                            opacity: {initial:'1',onHover:'1'}
+                                        }}>  
+                            <Button id={isEasyDifficulty ? 'easy_difficulty_selected' : 'easy_button'}
+                                className="button_dimensions" variant="contained" color="primary" 
+                                onClick={()=>{select_difficulty('easy')}}>EASY</Button>
+                        </AnimationWrapper>    
                     </Grid>
                     <Grid item sm={12} md={4} lg={4}>
-                        <Button id={isMediumDifficulty ? 'medium_difficulty_selected' : 'medium_button'} 
-                                className="button_dimensions" variant="contained" color="secondary"
-                                onClick={()=>{select_difficulty('medium')}}>MEDIUM</Button>
+                        <AnimationWrapper config={{
+                                            transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                            opacity: {initial:'1',onHover:'1'}
+                                        }}>
+                            <Button id={isMediumDifficulty ? 'medium_difficulty_selected' : 'medium_button'} 
+                                    className="button_dimensions" variant="contained" color="secondary"
+                                    onClick={()=>{select_difficulty('medium')}}>MEDIUM</Button>
+                        </AnimationWrapper>            
                     </Grid>
                     <Grid item sm={12} md={4} lg={4}>
-                        <Button id={isHardDifficulty ? 'hard_difficulty_selected' : 'hard_button'}  className="button_dimensions" variant="contained" color="secondary"
-                                onClick={()=>{select_difficulty('hard')}}>HARD</Button>
+                        <AnimationWrapper config={{
+                                            transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                            opacity: {initial:'1',onHover:'1'}
+                                        }}>
+                            <Button id={isHardDifficulty ? 'hard_difficulty_selected' : 'hard_button'}  className="button_dimensions" variant="contained" color="secondary"
+                                    onClick={()=>{select_difficulty('hard')}}>HARD</Button>
+                        </AnimationWrapper>            
                     </Grid>
                 </Grid>
             </div>    

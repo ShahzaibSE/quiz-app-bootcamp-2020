@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import {green} from "@material-ui/core/colors"
 
 export const questionStyles = makeStyles({
     root: {
@@ -15,4 +16,14 @@ export const questionStyles = makeStyles({
     pos: {
       marginBottom: 12,
     },
+    card_actions_container:{
+      float:"right"
+    },
+    question_text: {
+      fontWeight:"bold"
+    },
+    form_container:{
+      paddingTop:20,
+      paddingBottom:20
+    }
   });
