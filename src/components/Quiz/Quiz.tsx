@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Grid} from "@material-ui/core"
 // API.
-import {QuestionsAPI} from "./../api/index.api"
+import {QuestionsAPI, DIFFICULTIES} from "./../api/index.api"
 // Assets.
 import "./Quiz.scss"
 // Component
@@ -23,6 +23,8 @@ const Quiz = ({category, difficulty}:QuizPropes) => {
     const [userAnswers, setUserAnswers] = useState([]);
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false)
+    // 
+    console.log(questions_api.getQuestions(total_questions, 9, DIFFICULTIES.EASY))
     //
     // Quiz handlers.
     const startQuiz = async ()=>{}
