@@ -21,11 +21,11 @@ const Header = () => {
                         <Typography variant="h5" className={classes.title}>
                             Treasure Chest
                         </Typography>
-                            <Fab aria-label="Quit Quiz" className={classes.quit_button}>
+                            {/* <Fab aria-label="Quit Quiz" className={classes.quit_button}>
                                 <IconButton>
                                     <PowerOffSharp style={{color:"color:'rgba(255, 255, 255, 0.8)'"}}/>
                                 </IconButton>
-                            </Fab>
+                            </Fab> */}
                         </Toolbar>
                     </AppBar>
                 </div>
