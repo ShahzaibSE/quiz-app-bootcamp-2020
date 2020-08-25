@@ -3,9 +3,9 @@ import {Grid} from "@material-ui/core"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import {PowerOffSharp} from "@material-ui/icons"
 
 //Assets.
 import {headerStyles} from "./Header.style"
@@ -21,6 +21,11 @@ const Header = () => {
                         <Typography variant="h5" className={classes.title}>
                             Treasure Chest
                         </Typography>
+                            <Fab aria-label="Quit Quiz" className={classes.quit_button}>
+                                <IconButton>
+                                    <PowerOffSharp style={{color:"color:'rgba(255, 255, 255, 0.8)'"}}/>
+                                </IconButton>
+                            </Fab>
                         </Toolbar>
                     </AppBar>
                 </div>

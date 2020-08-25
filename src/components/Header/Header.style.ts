@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import {green} from "@material-ui/core/colors"
+import {green,lightBlue} from "@material-ui/core/colors"
 
 export const headerStyles = makeStyles((theme) => ({
     root: {
@@ -19,5 +19,8 @@ export const headerStyles = makeStyles((theme) => ({
     },
     cosmos_technologies_logo: {
       paddingRight: 10
+    },
+    quit_button: {
+      backgroundColor:lightBlue[500]
     }
 }));

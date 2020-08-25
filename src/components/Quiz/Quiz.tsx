@@ -9,7 +9,7 @@ type QuizPropes = {
     difficulty: string
 }
 
-const Quiz = ({category}:QuizPropes) => {
+const Quiz = ({category, difficulty}:QuizPropes) => {
     let questions_api = new QuestionsAPI()
     let questions:any[] 
 
@@ -23,6 +23,7 @@ const Quiz = ({category}:QuizPropes) => {
     },[])
     //
     console.log(`Category Number: ${String(category)}`)
+    console.log(`Difficulty: ${difficulty}`)
     //
     return (
         <div className="quiz_container">
