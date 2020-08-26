@@ -202,8 +202,6 @@ const CategoryList = () => {
                 isCorrectAnswer,
                 correct_answer: questions[number].correct_answer
             }
-            console.log("Answer Object")
-            console.log(answerObject)
             setUserAnswers((prev) => [...prev, answerObject])
         }
     }
@@ -249,7 +247,7 @@ const CategoryList = () => {
                             {!gameOver && !isLoading && userAnswers.length === number + 1 && 
                                 number !== total_questions - 1 ? 
                                 <CardActions className={question_classes.card_actions_container}>
-                                    <Fab color="primary"><NavigateNext/></Fab>
+                                    <Fab color="primary" onClick={nextQuestion}><NavigateNext/></Fab>
                                 </CardActions> : null}
                         </Card>
 
