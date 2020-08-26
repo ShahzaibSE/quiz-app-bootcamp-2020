@@ -187,9 +187,9 @@ const CategoryList = () => {
     console.log("Questions")
     console.log(questions)
     //
-    const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const checkAnswer = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (!gameOver) {
-            const answer = e.currentTarget.value;
+            const answer = e.currentTarget.value
             console.log(`User's answer: ${answer}`)
             // Checking correct answer.
             const isCorrectAnswer = questions[number].correct_answer === answer;
@@ -202,6 +202,8 @@ const CategoryList = () => {
                 isCorrectAnswer,
                 correct_answer: questions[number].correct_answer
             }
+            console.log("Answer Object")
+            console.log(answerObject)
             setUserAnswers((prev) => [...prev, answerObject])
         }
     }

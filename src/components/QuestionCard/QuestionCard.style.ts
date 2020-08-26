@@ -4,6 +4,7 @@ import {green} from "@material-ui/core/colors"
 export const questionStyles = makeStyles({
     root: {
       minWidth: 275,
+      borderRadius: 10
     },
     bullet: {
       display: 'inline-block',

@@ -15,7 +15,7 @@ import "./QuestionCard.scss";
 type QuestionProps = {
     question: string;
     answers: string[];
-    callback: any;
+    callback: (e: React.ChangeEvent<HTMLInputElement>) => void;
     userAnswer: any;
     questionNum: number;
     totalQuestions: number;
@@ -54,7 +54,7 @@ const QuestionCard: React.FC<QuestionProps> = ({question, answers, questionNum, 
     //
     return (
         <div> 
-        <form onSubmit={handleSubmit}>   
+        <form>   
             {/* <Card className={classes.root}> */}
                 
                 <CardContent>
@@ -63,12 +63,12 @@ const QuestionCard: React.FC<QuestionProps> = ({question, answers, questionNum, 
                     </Typography>
                     <Typography className={classes.question_text} variant="h5">{question}</Typography>
                     <RadioGroup className={classes.form_container} 
-                                aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
+                                aria-label="quiz" name="quiz" value={value} onChange={callback}>
                         {/* <FormControlLabel value="best" control={<Radio />} label="The best!" />
                         <FormControlLabel value="worst" control={<Radio />} label="The worst." /> */}
                         {answers.map(answer => (
                             <FormControlLabel key={answer} value={answer} control={<Radio />} label={answer} 
-                                    onClick={callback} />
+                                   />
                         ))}
                     </RadioGroup>
                 </CardContent>
