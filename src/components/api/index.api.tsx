@@ -23,10 +23,11 @@ export enum DIFFICULTIES {
 export class QuestionsAPI {
     baseUrl: string = "https://opentdb.com/api.php"
 
-    async getQuestions(amount:number, category:number, difficulty:DIFFICULTIES) {
+    async getQuestions(amount:number, category:number, difficulty:string) {
         const question_url = `${this.baseUrl}?amount=${String(amount)}&category=${category}&difficulty=${difficulty}`
         let data = await (await axios.get(question_url)).data
         console.log(question_url)
+        //
         return data.results.map((question:Question) => ({
             ...question,
             answers: shuffleArray([...question.incorrect_answers, question.correct_answer])

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Grid} from "@material-ui/core"
 // API.
-import {QuestionsAPI, DIFFICULTIES} from "./../api/index.api"
+import {QuestionsAPI, DIFFICULTIES, QuestionState} from "./../api/index.api"
 // Assets.
 import "./Quiz.scss"
 // Component
@@ -14,20 +14,45 @@ type QuizPropes = {
     difficulty: string
 }
 
+type AnswerObject = {
+    question: string;
+    answer: string;
+    isCorrectAnswer: boolean;
+    correctAnswer: string;
+}
+
 const Quiz = ({category, difficulty}:QuizPropes) => {
     let questions_api = new QuestionsAPI()
     // Question prequisites
     const [isLoading, setLoading] = useState(false);
-    const [questions, setQuestions] = useState([]);
+    const [questions, setQuestions] = useState<QuestionState[]>([]);
     const [number, setNumber] = useState(0);
-    const [userAnswers, setUserAnswers] = useState([]);
+    const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false)
     // 
     console.log(questions_api.getQuestions(total_questions, 9, DIFFICULTIES.EASY))
     //
     // Quiz handlers.
-    const startQuiz = async ()=>{}
+    const startQuiz = async ()=>{
+        setLoading(true)
+        setGameOver(false)
+        // 
+        const newQuestions = await questions_api.getQuestions(total_questions, category, difficulty)
+        console.log("Fetched questions")
+        console.log(newQuestions)
+        setQuestions(newQuestions)
+        setScore(0)
+        setUserAnswers([])
+        setNumber(0)
+        setLoading(false)
+
+    }
+
+    startQuiz()
+
+    console.log("Questions")
+    console.log(questions)
 
     const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {}
 

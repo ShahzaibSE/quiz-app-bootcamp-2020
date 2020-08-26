@@ -3,15 +3,32 @@ import {Grid, Card} from "@material-ui/core"
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import NavigateNext from "@material-ui/icons/NavigateNext"
 import Typography from '@material-ui/core/Typography';
 import {AnimationWrapper} from "react-hover-animation"
+import LinearProgress from '@material-ui/core/LinearProgress';
 // Assets
 import "./CategoryList.scss"
-import {categoryStyle} from "./CateogoryList.style"
+import {categoryStyle, questionLoaderStyles} from "./CateogoryList.style"
+import {questionStyles} from "./../QuestionCard/QuestionCard.style"
 // Context.
 import {CategoryContext} from "./categories_context/Category.context"
 // Components.
 import Quiz from "./../Quiz/Quiz"
+import QuestionCard from "./../QuestionCard/QuestionCard"
+// API.
+import {QuestionsAPI, DIFFICULTIES, QuestionState} from "./../api/index.api"
+
+// Total questions.
+const total_questions: number = 10;
+
+type AnswerObject = {
+    question: string;
+    answer: string;
+    isCorrectAnswer: boolean;
+    correct_answer: string;
+}
 
 const CategoryList = () => {
     const [isQuiz, setQuiz] = useState(false)
@@ -20,15 +37,30 @@ const CategoryList = () => {
     const [isEasyDifficulty, setEasyDifficultySelected] = useState(false)
     const [isMediumDifficulty, setMediumDifficultySelected] = useState(false)
     const [isHardDifficulty, setHardDifficultySelected] = useState(false)
+    // Styles //
     const category_classes = categoryStyle()
+    const question_classes = questionStyles()
+    const question_loader_classes = questionLoaderStyles()
+
+    // -- //
     const {categories: {general_knowledge,
                         geogprahy, video_games, 
                         history, mathematics, computers}} = useContext(CategoryContext)  
+    // Quiz prequisites.
+    let questions_api = new QuestionsAPI()
 
+    // Question prequisites
+    const [isLoading, setLoading] = useState(false);
+    const [questions, setQuestions] = useState<QuestionState[]>([]);
+    const [number, setNumber] = useState(0);
+    const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
+    const [score, setScore] = useState(0);
+    const [gameOver, setGameOver] = useState(true)   
+    // -- //   
 
     const select_difficulty = (selected_difficulty:string) => {
         if (selected_difficulty === "easy") {
-            setDifficulty(selected_difficulty)
+            setDifficulty(DIFFICULTIES.EASY)
             setEasyDifficultySelected(!isEasyDifficulty)
             setMediumDifficultySelected(false)
             setHardDifficultySelected(false)
@@ -36,7 +68,7 @@ const CategoryList = () => {
             console.log(selected_difficulty)
         }
         if (selected_difficulty === "medium") {
-            setDifficulty(selected_difficulty)
+            setDifficulty(DIFFICULTIES.MEDIUM)
             setEasyDifficultySelected(false)
             setMediumDifficultySelected(!isMediumDifficulty)
             setHardDifficultySelected(false)
@@ -44,7 +76,7 @@ const CategoryList = () => {
             console.log(selected_difficulty)
         }
         if (selected_difficulty === "hard") {
-            setDifficulty(selected_difficulty)
+            setDifficulty(DIFFICULTIES.HARD)
             setEasyDifficultySelected(false)
             setMediumDifficultySelected(false)
             setHardDifficultySelected(!isHardDifficulty)
@@ -52,44 +84,176 @@ const CategoryList = () => {
             console.log(selected_difficulty)
         }
     }
-
-    const start_quiz = (category:any) => {
-        console.log(`Category Name: ${category}`)
-        console.log("Difficulty State")
-        console.log(difficulty)
+    // -- Quiz Handler -- //
+    const start_quiz = async (category:any) => {
         if (category === "General Knowledge"){
             setCategoryNumber(general_knowledge.id)
+            // Starting Quiz here //
+            setLoading(true)
+            setGameOver(false)
+            // 
+            const newQuestions = await questions_api.getQuestions(total_questions, categoryNumber, difficulty)
+            console.log("Fetched questions")
+            console.log(newQuestions)
+            setQuestions(newQuestions)
+            setScore(0)
+            setUserAnswers([])
+            setNumber(0)
+            setLoading(false)
+            // -- //
             setQuiz(!isQuiz)
         }
         if(category === "Geography"){
             setCategoryNumber(geogprahy.id)
+            // Starting Quiz here //
+            setLoading(true)
+            setGameOver(false)
+            // 
+            const newQuestions = await questions_api.getQuestions(total_questions, categoryNumber, difficulty)
+            console.log("Fetched questions")
+            console.log(newQuestions)
+            setQuestions(newQuestions)
+            setScore(0)
+            setUserAnswers([])
+            setNumber(0)
+            setLoading(false)
+             // -- //
             setQuiz(!isQuiz)
         } 
         if(category === "Video Games"){
             setCategoryNumber(video_games.id)
+            // Starting Quiz here //
+            setLoading(true)
+            setGameOver(false)
+            // 
+            const newQuestions = await questions_api.getQuestions(total_questions, categoryNumber, difficulty)
+            setQuestions(newQuestions)
+            setScore(0)
+            setUserAnswers([])
+            setNumber(0)
+            setLoading(false)
+            // -- //
             setQuiz(!isQuiz)
         } 
         if(category === "History"){
             setCategoryNumber(history.id)
+            // Starting Quiz here //
+            setLoading(true)
+            setGameOver(false)
+            // 
+            const newQuestions = await questions_api.getQuestions(total_questions, categoryNumber, difficulty)
+            setQuestions(newQuestions)
+            setScore(0)
+            setUserAnswers([])
+            setNumber(0)
+            setLoading(false)
+            // -- //
             setQuiz(!isQuiz)
         } 
         if(category === "Mathematics"){
             setCategoryNumber(mathematics.id)
+            // Starting Quiz here //
+            setLoading(true)
+            setGameOver(false)
+            // 
+            const newQuestions = await questions_api.getQuestions(total_questions, categoryNumber, difficulty)
+            setQuestions(newQuestions)
+            setScore(0)
+            setUserAnswers([])
+            setNumber(0)
+            setLoading(false)
+            // -- //
             setQuiz(!isQuiz)
         } 
         if(category === "Computers"){
             setCategoryNumber(computers.id)
+            // Starting Quiz here //
+            setLoading(true)
+            setGameOver(false)
+            // 
+            const newQuestions = await questions_api.getQuestions(total_questions, categoryNumber, difficulty)
+            setQuestions(newQuestions)
+            setScore(0)
+            setUserAnswers([])
+            setNumber(0)
+            setLoading(false)
+            // -- //
             setQuiz(!isQuiz)
         } 
     }
+    // 
+    console.log(questions_api.getQuestions(total_questions, 9, DIFFICULTIES.EASY))
+    //
+    console.log("Questions")
+    console.log(questions)
+    //
+    const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (!gameOver) {
+            const answer = e.currentTarget.value;
+            console.log(`User's answer: ${answer}`)
+            // Checking correct answer.
+            const isCorrectAnswer = questions[number].correct_answer === answer;
+            //
+            if(isCorrectAnswer) { setScore(prev => prev + 1) }
+            // Save user answer in the array.
+            const answerObject = {
+                question: questions[number].question,
+                answer,
+                isCorrectAnswer,
+                correct_answer: questions[number].correct_answer
+            }
+            setUserAnswers((prev) => [...prev, answerObject])
+        }
+    }
+
+    const nextQuestion = () => {
+        // To navigate to next question.
+        const nextQuestion = number + 1;
+        //
+        if (nextQuestion === total_questions) {
+            setGameOver(true)
+        }else {
+            setNumber(nextQuestion);
+        }
+    }
+
+    // --- //
 
     if (isQuiz) {
         return(
-            <Grid container>
-                <Grid item xs={12} sm={12} md={12} lg={12}>
-                    <Quiz category={categoryNumber} difficulty={difficulty}/>
-                </Grid>
-            </Grid>
+            <div className="quiz_container">
+                <Grid container alignItems="center" justify="center">
+                    <Grid item xs={12} sm={12} md={6} lg={6}>
+
+                        <Card className={question_classes.root}>
+
+                            {/* {!gameOver ? <Typography component="h6">Score:</Typography> : null} */}
+
+                            {isLoading &&
+                            <div className="question_loader">
+                                <LinearProgress color="secondary" />
+                            </div>}
+
+                            {!isLoading && !gameOver && (
+
+                            <QuestionCard 
+                                questionNum = {number + 1}
+                                totalQuestions = {total_questions}
+                                question = {questions[number].question}
+                                answers = {questions[number].answers}
+                                userAnswer = {userAnswers[number] ? userAnswers : undefined}
+                                callback = {checkAnswer}
+                            />)}
+                            {!gameOver && !isLoading && userAnswers.length === number + 1 && 
+                                number !== total_questions - 1 ? 
+                                <CardActions className={question_classes.card_actions_container}>
+                                    <Fab color="primary"><NavigateNext/></Fab>
+                                </CardActions> : null}
+                        </Card>
+
+                    </Grid>
+                </Grid>  
+            </div>
         )
     }else{
                                   

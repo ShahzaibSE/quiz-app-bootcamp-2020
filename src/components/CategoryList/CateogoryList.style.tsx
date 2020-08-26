@@ -1,4 +1,5 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+
 
 export const categoryStyle = makeStyles(theme => ({
     root: {
@@ -29,6 +30,13 @@ export const categoryStyle = makeStyles(theme => ({
     }
 }));
 
-export const animation_styles = {
-     
-}
+export const questionLoaderStyles = makeStyles((theme: Theme) =>
+      createStyles({
+        root: {
+          width: '70%',
+          // '& > * + *': {
+          //   marginTop: theme.spacing(2),
+          // },
+        },
+      }),
+);
