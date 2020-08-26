@@ -17,7 +17,7 @@ const Header = () => {
             <Grid item xs={12} md={12} lg={12}>
                 <div>
                     <AppBar position="fixed" className={classes.app_bar_container}>
-                        <Toolbar>
+                        <Toolbar style={{margin:"auto"}}>
                         <Typography variant="h5" className={classes.title}>
                             Treasure Chest
                         </Typography>

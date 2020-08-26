@@ -18,7 +18,8 @@ export const questionStyles = makeStyles({
       marginBottom: 12,
     },
     card_actions_container:{
-      float:"right"
+      float:"right",
+      fontWeight:"bold"
     },
     question_text: {
       fontWeight:"bold"

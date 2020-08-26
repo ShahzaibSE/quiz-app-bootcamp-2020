@@ -244,11 +244,15 @@ const CategoryList = () => {
                                 userAnswer = {userAnswers[number] ? userAnswers : undefined}
                                 callback = {checkAnswer}
                             />)}
-                            {!gameOver && !isLoading && userAnswers.length === number + 1 && 
+                            {/* {!gameOver && !isLoading && userAnswers.length === number + 1 &&  */}
+                            {!gameOver && !isLoading && 
                                 number !== total_questions - 1 ? 
                                 <CardActions className={question_classes.card_actions_container}>
                                     <Fab color="primary" onClick={nextQuestion}><NavigateNext/></Fab>
-                                </CardActions> : null}
+                                </CardActions> : 
+                                <CardActions className={question_classes.card_actions_container}>
+                                    <Button variant="contained" color="secondary">Submit</Button>
+                                </CardActions>}
                         </Card>
 
                     </Grid>
