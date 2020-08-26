@@ -63,12 +63,10 @@ const QuestionCard: React.FC<QuestionProps> = ({question, answers, questionNum, 
                     </Typography>
                     <Typography className={classes.question_text} variant="h5">{question}</Typography>
                     <RadioGroup className={classes.form_container} 
-                                aria-label="quiz" name="quiz" value={value} onChange={callback}>
-                        {/* <FormControlLabel value="best" control={<Radio />} label="The best!" />
-                        <FormControlLabel value="worst" control={<Radio />} label="The worst." /> */}
+                                aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
                         {answers.map(answer => (
-                            <FormControlLabel key={answer} value={answer} control={<Radio />} label={answer} 
-                                   />
+                            <FormControlLabel key={answer} value={answer} control={<Radio onChange={callback} />} 
+                                    label={answer} />
                         ))}
                     </RadioGroup>
                 </CardContent>
