@@ -217,6 +217,10 @@ const CategoryList = () => {
         }
     }
 
+    const submitAnswers = () => {
+        setQuiz(!isQuiz)
+    }
+
     // --- //
 
     if (isQuiz) {
@@ -251,7 +255,9 @@ const CategoryList = () => {
                                     <Fab color="primary" onClick={nextQuestion}><NavigateNext/></Fab>
                                 </CardActions> : 
                                 <CardActions className={question_classes.card_actions_container}>
-                                    <Button variant="contained" color="secondary">Submit</Button>
+                                    <Button variant="contained" color="secondary" onClick={submitAnswers}>
+                                        Submit
+                                    </Button>
                                 </CardActions>}
                         </Card>
 
