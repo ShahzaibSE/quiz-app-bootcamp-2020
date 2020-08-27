@@ -18,6 +18,8 @@ import {CategoryContext} from "./categories_context/Category.context"
 import QuestionCard from "./../QuestionCard/QuestionCard"
 // API.
 import {QuestionsAPI, DIFFICULTIES, QuestionState} from "./../api/index.api"
+// Utils.
+import {removeDuplicates} from "./../api/utils"
 
 // Total questions.
 const total_questions: number = 10;
@@ -191,6 +193,7 @@ const CategoryList = () => {
         if (!gameOver) {
             const answer = e.currentTarget.value
             console.log(`User's answer: ${answer}`)
+            console.log(`Number: ${String(number)}`)
             // Checking correct answer.
             const isCorrectAnswer = questions[number].correct_answer === answer;
             //
@@ -202,7 +205,7 @@ const CategoryList = () => {
                 isCorrectAnswer,
                 correct_answer: questions[number].correct_answer
             }
-            setUserAnswers((prev) => [...prev, answerObject])
+            setUserAnswers((prev) => removeDuplicates([...prev, answerObject],'question'))
         }
     }
 
