@@ -10,12 +10,11 @@ import {AnimationWrapper} from "react-hover-animation"
 import LinearProgress from '@material-ui/core/LinearProgress';
 // Assets
 import "./CategoryList.scss"
-import {categoryStyle, questionLoaderStyles} from "./CateogoryList.style"
+import {categoryStyle, questionLoaderStyles, circularQuizLoader} from "./CateogoryList.style"
 import {questionStyles} from "./../QuestionCard/QuestionCard.style"
 // Context.
 import {CategoryContext} from "./categories_context/Category.context"
 // Components.
-import Quiz from "./../Quiz/Quiz"
 import QuestionCard from "./../QuestionCard/QuestionCard"
 // API.
 import {QuestionsAPI, DIFFICULTIES, QuestionState} from "./../api/index.api"
@@ -41,6 +40,7 @@ const CategoryList = () => {
     const category_classes = categoryStyle()
     const question_classes = questionStyles()
     const question_loader_classes = questionLoaderStyles()
+    const circular_loader_classes = circularQuizLoader()
 
     // -- //
     const {categories: {general_knowledge,
@@ -249,16 +249,17 @@ const CategoryList = () => {
                                 callback = {checkAnswer}
                             />)}
                             {/* {!gameOver && !isLoading && userAnswers.length === number + 1 &&  */}
-                            {!gameOver && !isLoading && 
+                            {!gameOver && !isLoading && userAnswers.length === number + 1 &&
                                 number !== total_questions - 1 ? 
                                 <CardActions className={question_classes.card_actions_container}>
                                     <Fab color="primary" onClick={nextQuestion}><NavigateNext/></Fab>
-                                </CardActions> : 
+                                </CardActions> : null}
+                            {!gameOver && number === total_questions - 1 ? 
                                 <CardActions className={question_classes.card_actions_container}>
                                     <Button variant="contained" color="secondary" onClick={submitAnswers}>
                                         Submit
                                     </Button>
-                                </CardActions>}
+                                </CardActions>: null}    
                         </Card>
 
                     </Grid>

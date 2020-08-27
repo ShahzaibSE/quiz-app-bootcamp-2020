@@ -40,3 +40,14 @@ export const questionLoaderStyles = makeStyles((theme: Theme) =>
         },
       }),
 );
+
+export const circularQuizLoader = makeStyles((theme: Theme) =>
+createStyles({
+  root: {
+      display: 'flex',
+      '& > * + *': {
+        marginLeft: theme.spacing(2),
+      },
+    },
+  }),
+);
