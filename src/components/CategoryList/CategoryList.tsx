@@ -16,6 +16,7 @@ import {questionStyles} from "./../QuestionCard/QuestionCard.style"
 import {CategoryContext} from "./categories_context/Category.context"
 // Components.
 import QuestionCard from "./../QuestionCard/QuestionCard"
+import Scorecard from "./../ScoreCard/ScoreCard"
 // API.
 import {QuestionsAPI, DIFFICULTIES, QuestionState} from "./../api/index.api"
 // Utils.
@@ -33,6 +34,7 @@ type AnswerObject = {
 
 const CategoryList = () => {
     const [isQuiz, setQuiz] = useState(false)
+    const [isScoreCard, setScoreCard] = useState(false)
     const [categoryNumber, setCategoryNumber] = useState(0)
     const [difficulty, setDifficulty] = useState("easy")
     const [isEasyDifficulty, setEasyDifficultySelected] = useState(false)
@@ -228,12 +230,14 @@ const CategoryList = () => {
     }
 
     const submitAnswers = () => {
-        setQuiz(!isQuiz)
+        setScoreCard(!isScoreCard)
     }
 
     // --- //
-
-    if (isQuiz) {
+    if (isScoreCard) {
+        return (<Scorecard score={score} totalQuestions={total_questions} />)
+    }
+    else if (isQuiz) {
         return(
             <div className="quiz_container">
                 <Grid container alignItems="center" justify="center">
