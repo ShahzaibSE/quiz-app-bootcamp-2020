@@ -205,9 +205,16 @@ const CategoryList = () => {
                 isCorrectAnswer,
                 correct_answer: questions[number].correct_answer
             }
+            // console.log("Answer Object")
+            // console.log(answerObject)
             setUserAnswers((prev) => removeDuplicates([...prev, answerObject],'question'))
         }
     }
+    // console.log("User Answers")
+    // console.log(userAnswers)
+    //
+    console.log("After removing duplicates answers.")
+    console.log(removeDuplicates(userAnswers, 'question'))
 
     const nextQuestion = () => {
         // To navigate to next question.
