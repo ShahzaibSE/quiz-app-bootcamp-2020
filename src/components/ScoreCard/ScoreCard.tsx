@@ -50,6 +50,10 @@ const ScoreCard = ({score, totalQuestions}:ScoreCardProps) => {
                                                     <Typorgraphy className={classes.scorecard_result_text} 
                                                         variant="h3">Congratulations</Typorgraphy>
                                                 </ThemeProvider>
+
+                                                <Typography variant="h4" className={classes.quiz_score}>
+                                                    Score: {score}/{totalQuestions}</Typography>
+
                                                 <CardMedia
                                                         className={classes.media}
                                                         image={congratulations}
@@ -57,8 +61,8 @@ const ScoreCard = ({score, totalQuestions}:ScoreCardProps) => {
                                                     />
                                             </CardContent>
                                             <CardActions className="card_actions">
-                                                <Fab onClick={play_again}>
-                                                    <Replay/>
+                                                <Fab style={{margin:"auto", marginBottom:20}} className={classes.restart_btn} onClick={play_again}>
+                                                    <Replay className={classes.restart_icon} />
                                                 </Fab>
                                             </CardActions>
                                         </Card>
