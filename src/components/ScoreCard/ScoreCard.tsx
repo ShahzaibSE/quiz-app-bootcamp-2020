@@ -8,9 +8,11 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Fab from "@material-ui/core/Fab";
 import IconButton from "@material-ui/core/IconButton";
 import {Replay} from "@material-ui/icons";
+import Typorgraphy from "@material-ui/core/Typography";
+import {ThemeProvider} from "@material-ui/core/styles"
 // Assets.
 import "./ScoreCard.scss";
-import {scoreCardStyles} from "./Score.style";
+import {scoreCardStyles, theme} from "./Score.style";
 import congratulations from "./../animations/congratulations.gif";
 import sad_because_failed from "./../animations/sad.gif";
 // Components.
@@ -39,11 +41,15 @@ const ScoreCard = ({score, totalQuestions}:ScoreCardProps) => {
             <Grid container justify="center" alignItems="center"> 
                 {
                     score >= 5 ? 
-                    <Grid item xs={12} sm={12} md={6} lg={6}>
+                    <Grid item xs={12} sm={12} md={5} lg={5}>
                                     <div className="scorecard_item_container">
-                                        <Card>
-                                            <CardHeader title="Scorecard"></CardHeader>
+                                        <Card className={classes.root}>
+                                            {/* <CardHeader title="Scorecard"></CardHeader> */}
                                             <CardContent>
+                                                <ThemeProvider theme={theme}>
+                                                    <Typorgraphy className={classes.scorecard_result_text} 
+                                                        variant="h3">Congratulations</Typorgraphy>
+                                                </ThemeProvider>
                                                 <CardMedia
                                                         className={classes.media}
                                                         image={congratulations}
@@ -52,31 +58,31 @@ const ScoreCard = ({score, totalQuestions}:ScoreCardProps) => {
                                             </CardContent>
                                             <CardActions className="card_actions">
                                                 <Fab onClick={play_again}>
-                                                    <IconButton>
-                                                        <Replay/>
-                                                    </IconButton>
+                                                    <Replay/>
                                                 </Fab>
                                             </CardActions>
                                         </Card>
                                     </div>
                     </Grid> 
                         :
-                    <Grid item xs={12} sm={12} md={6} lg={6}>
+                    <Grid item xs={12} sm={12} md={5} lg={5}>
                         <div className="scorecard_item_container">
-                            <Card>
-                                <CardHeader title="Scorecard"></CardHeader>
+                            <Card className={classes.root}>
+                                {/* <CardHeader title="Scorecard"></CardHeader> */}
                                 <CardContent>
-                                    <CardMedia
+                                <ThemeProvider theme={theme}>
+                                        <Typorgraphy className={classes.scorecard_result_text} 
+                                            variant="h3">Sorry! You have Failed!</Typorgraphy>
+                                </ThemeProvider>
+                                <CardMedia
                                             className={classes.media}
                                             image={sad_because_failed}
-                                            title="Congratulations"
+                                            title="Failed Quiz"
                                         />
                                 </CardContent>
                                 <CardActions className="card_actions">
                                     <Fab onClick={play_again}>
-                                        <IconButton>
-                                            <Replay/>
-                                        </IconButton>
+                                        <Replay/>
                                     </Fab>
                                 </CardActions>
                             </Card>
