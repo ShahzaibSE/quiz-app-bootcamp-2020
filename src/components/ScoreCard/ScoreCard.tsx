@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Grid} from "@material-ui/core"
+import {Grid, Typography} from "@material-ui/core"
 import Card from "@material-ui/core/Card"
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -41,7 +41,7 @@ const ScoreCard = ({score, totalQuestions}:ScoreCardProps) => {
             <Grid container justify="center" alignItems="center"> 
                 {
                     score >= 5 ? 
-                    <Grid item xs={12} sm={12} md={5} lg={5}>
+                    <Grid item xs={12} sm={6} md={5} lg={5}>
                                     <div className="scorecard_item_container">
                                         <Card className={classes.root}>
                                             {/* <CardHeader title="Scorecard"></CardHeader> */}
@@ -65,7 +65,7 @@ const ScoreCard = ({score, totalQuestions}:ScoreCardProps) => {
                                     </div>
                     </Grid> 
                         :
-                    <Grid item xs={12} sm={12} md={5} lg={5}>
+                    <Grid item xs={12} sm={6} md={5} lg={5}>
                         <div className="scorecard_item_container">
                             <Card className={classes.root}>
                                 {/* <CardHeader title="Scorecard"></CardHeader> */}
@@ -74,15 +74,19 @@ const ScoreCard = ({score, totalQuestions}:ScoreCardProps) => {
                                         <Typorgraphy className={classes.scorecard_result_text} 
                                             variant="h3">Sorry! You have Failed!</Typorgraphy>
                                 </ThemeProvider>
+                                
+                                <Typography variant="h4" className={classes.quiz_score}
+                                            >Score: {score}/{totalQuestions}</Typography>
+
                                 <CardMedia
                                             className={classes.media}
                                             image={sad_because_failed}
                                             title="Failed Quiz"
                                         />
                                 </CardContent>
-                                <CardActions className="card_actions">
-                                    <Fab onClick={play_again}>
-                                        <Replay/>
+                                <CardActions>
+                                    <Fab style={{margin:"auto", marginBottom:20}} className={classes.restart_btn} color="secondary" onClick={play_again}>
+                                        <Replay className={classes.restart_icon} />
                                     </Fab>
                                 </CardActions>
                             </Card>

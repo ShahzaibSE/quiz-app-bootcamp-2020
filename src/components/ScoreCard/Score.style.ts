@@ -16,9 +16,9 @@ export const scoreCardStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       minWidth: 30,
-      minHeight: 30,
-      marginTop:100,
-      borderRadius:20
+      // height: "40rem",
+      marginTop:90,
+      borderRadius:10
     },
     media: {
       minHeight: 100,
@@ -27,6 +27,16 @@ export const scoreCardStyles = makeStyles((theme: Theme) =>
     },
     scorecard_result_text: {
       textAlign:"center"
+    },
+    quiz_score: {
+      textAlign:"center"
+    },
+    restart_btn:{
+      width:70,
+      height:70
+    },
+    restart_icon: {
+      fontSize:30
     }
   })
 );

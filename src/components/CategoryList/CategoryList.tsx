@@ -234,7 +234,7 @@ const CategoryList = () => {
     }
 
     // --- //
-    if (isScoreCard) {
+    if (!isScoreCard) {
         return (<Scorecard score={score} totalQuestions={total_questions} />)
     }
     else if (isQuiz) {

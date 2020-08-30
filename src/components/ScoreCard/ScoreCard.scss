@@ -5,10 +5,10 @@
 
 .scorecard_item_container{
     /**/
+    line-height: 10px;
 }
 
-.card__actions {
-    display: flex;
-    align-items: center;
+.card_actions {
+    margin:auto;
     // justify-content: space-between;
 }    
