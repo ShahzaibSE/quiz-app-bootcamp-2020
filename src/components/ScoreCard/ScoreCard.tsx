@@ -61,7 +61,8 @@ const ScoreCard = ({score, totalQuestions}:ScoreCardProps) => {
                                                     />
                                             </CardContent>
                                             <CardActions className="card_actions">
-                                                <Fab style={{margin:"auto", marginBottom:20}} className={classes.restart_btn} onClick={play_again}>
+                                                <Fab style={{margin:"auto", marginBottom:20}} className={classes.restart_btn} 
+                                                    color="secondary" onClick={play_again}>
                                                     <Replay className={classes.restart_icon} />
                                                 </Fab>
                                             </CardActions>

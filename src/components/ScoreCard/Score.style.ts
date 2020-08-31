@@ -26,10 +26,12 @@ export const scoreCardStyles = makeStyles((theme: Theme) =>
       paddingTop: '56.25%', // 16:9
     },
     scorecard_result_text: {
-      textAlign:"center"
+      textAlign:"center",
+      fontWeight:"bold"
     },
     quiz_score: {
-      textAlign:"center"
+      textAlign:"center",
+      fontWeight:"bold"
     },
     restart_btn:{
       width:70,

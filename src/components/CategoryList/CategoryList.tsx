@@ -8,6 +8,7 @@ import NavigateNext from "@material-ui/icons/NavigateNext"
 import Typography from '@material-ui/core/Typography';
 import {AnimationWrapper} from "react-hover-animation"
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { Fade } from "react-awesome-reveal";
 // Assets
 import "./CategoryList.scss"
 import {categoryStyle, questionLoaderStyles, circularQuizLoader} from "./CateogoryList.style"
@@ -239,6 +240,7 @@ const CategoryList = () => {
     }
     else if (isQuiz) {
         return(
+           <Fade> 
             <div className="quiz_container">
                 <Grid container alignItems="center" justify="center">
                     <Grid item xs={12} sm={12} md={6} lg={6}>
@@ -279,10 +281,12 @@ const CategoryList = () => {
                     </Grid>
                 </Grid>  
             </div>
+            </Fade>
         )
     }else{
                                   
         return (
+        <Fade>
         <div>   
             <div className="difficulty_container">
                 <Grid container spacing={1}>
@@ -465,6 +469,7 @@ const CategoryList = () => {
                     </Grid>
             </div>
         </div> 
+        </Fade>
         )
         }
 }

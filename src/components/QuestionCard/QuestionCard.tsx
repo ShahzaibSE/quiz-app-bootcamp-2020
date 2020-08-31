@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
-import Card from "@material-ui/core/Card"
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Fab from '@material-ui/core/Fab';
-import NavigateNext from "@material-ui/icons/NavigateNext"
 import Typography from '@material-ui/core/Typography';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { Fade } from "react-awesome-reveal";
+import { AllHtmlEntities } from "html-entities";
 // Assets.
 import {questionStyles} from "./QuestionCard.style";
 import "./QuestionCard.scss";
@@ -24,6 +22,9 @@ type QuestionProps = {
 
 const QuestionCard: React.FC<QuestionProps> = ({question, answers, questionNum, callback, totalQuestions}) => {
     const classes = questionStyles()
+    // HTML Entity decoder.
+    const {decode} = new AllHtmlEntities();
+    //
     const [value, setValue] = React.useState('');
     const [error, setError] = React.useState(false);
     const [helperText, setHelperText] = React.useState('Choose wisely');
@@ -56,20 +57,21 @@ const QuestionCard: React.FC<QuestionProps> = ({question, answers, questionNum, 
         <div> 
         <form>   
             {/* <Card className={classes.root}> */}
-                
+                <Fade>
                 <CardContent>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
                     Question: {questionNum} / {totalQuestions}
                     </Typography>
-                    <Typography className={classes.question_text} variant="h5">{question}</Typography>
+                    <Typography className={classes.question_text} variant="h5">{decode(question)}</Typography>
                     <RadioGroup className={classes.form_container} 
                                 aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-                        {answers.map(answer => (
+                        {answers.map(answer => (  
                             <FormControlLabel key={answer} value={answer} control={<Radio onChange={callback} />} 
-                                    label={answer} />
+                                    label={answer} />       
                         ))}
                     </RadioGroup>
                 </CardContent>
+                </Fade>
 
                 {/* <CardActions className={classes.card_actions_container}>
                     <Fab color="primary"><NavigateNext/></Fab>

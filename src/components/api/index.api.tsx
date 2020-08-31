@@ -20,6 +20,12 @@ export enum DIFFICULTIES {
     HARD = "hard"
 }
 
+export enum ENCODING {
+    URLLEGACY = "urlLegacy",
+    URL3986 = "url3986",
+    URLBASE64 = "base64"
+}
+
 export class QuestionsAPI {
     baseUrl: string = "https://opentdb.com/api.php"
 
