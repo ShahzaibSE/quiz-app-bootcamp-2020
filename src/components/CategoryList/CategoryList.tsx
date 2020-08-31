@@ -289,7 +289,7 @@ const CategoryList = () => {
         <Fade>
         <div>   
             <div className="difficulty_container">
-                <Grid container spacing={1}>
+                <Grid container spacing={1} alignItems="center" justify="center">
                     <Grid item sm={12} md={4} lg={4}>
                         <AnimationWrapper config={{
                                             transform:{initial:'scale(1)',onHover:'scale(1.1)'},
@@ -323,7 +323,7 @@ const CategoryList = () => {
             </div>    
             <div className="category_list_container"> 
                     <Grid container spacing={3}>
-                        <Grid item sm={12} md={2} lg={2}>
+                        <Grid item sm={6} md={2} lg={2}>
                             <AnimationWrapper config={{
                                         transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                         opacity: {initial:'1',onHover:'1'}
@@ -347,7 +347,7 @@ const CategoryList = () => {
                             </AnimationWrapper>
                         </Grid>
 
-                        <Grid item sm={12} md={2} lg={2}>
+                        <Grid item sm={6} md={2} lg={2}>
                             <AnimationWrapper config={{
                                             transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                             opacity: {initial:'1',onHover:'1'}
@@ -371,7 +371,7 @@ const CategoryList = () => {
                         </AnimationWrapper> 
                         </Grid>
 
-                        <Grid item sm={12} md={2} lg={2}>
+                        <Grid item sm={6} md={2} lg={2}>
                             <AnimationWrapper config={{
                                             transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                             opacity: {initial:'1',onHover:'1'}
@@ -394,7 +394,7 @@ const CategoryList = () => {
                             </Card>
                         </AnimationWrapper> 
                         </Grid>
-                        <Grid item sm={12} md={2} lg={2}>
+                        <Grid item sm={6} md={2} lg={2}>
                         <AnimationWrapper config={{
                                         transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                         opacity: {initial:'1',onHover:'1'}
@@ -418,7 +418,7 @@ const CategoryList = () => {
                         </AnimationWrapper> 
                         </Grid>
 
-                        <Grid item sm={12} md={2} lg={2}>
+                        <Grid item sm={6} md={2} lg={2}>
                             <AnimationWrapper config={{
                                             transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                             opacity: {initial:'1',onHover:'1'}
@@ -442,7 +442,7 @@ const CategoryList = () => {
                         </AnimationWrapper> 
                         </Grid>
 
-                        <Grid item sm={12} md={2} lg={2}>
+                        <Grid item sm={6} md={2} lg={2}>
                             <AnimationWrapper config={{
                                             transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                             opacity: {initial:'1',onHover:'1'}
