@@ -27,5 +27,8 @@ export const headerStyles = makeStyles((theme) => ({
     help_btn: {
       width:70,
       height:70
+    },
+    help_icon: {
+      fontSize:30
     }
 }));

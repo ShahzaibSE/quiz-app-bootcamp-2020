@@ -19,19 +19,14 @@ const Header = () => {
                     <AppBar position="fixed" className={classes.app_bar_container}>
                         <Toolbar style={{margin:"auto"}}> 
                         <IconButton className={classes.help_btn} disabled={true}>
-                              <HelpOutlined/>
+                              <HelpOutlined className={classes.help_icon} />
                             </IconButton>  
                         <Typography variant="h5" className={classes.title}>
                             The Trivia
                         </Typography>
                         <IconButton className={classes.help_btn} disabled={true}>
-                              <HelpOutlined/>
+                              <HelpOutlined className={classes.help_icon}/>
                             </IconButton> 
-                            {/* <Fab aria-label="Quit Quiz" className={classes.quit_button}>
-                                <IconButton>
-                                    <PowerOffSharp style={{color:"color:'rgba(255, 255, 255, 0.8)'"}}/>
-                                </IconButton>
-                            </Fab> */}
                         </Toolbar>
                     </AppBar>
                 </div>
