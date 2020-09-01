@@ -12,7 +12,8 @@ export const headerStyles = makeStyles((theme) => ({
     },
     title: {
       flexGrow: 1,
-      fontSize: '2rem'
+      fontSize: '2rem',
+      fontWeight:"bold"
     },
     app_bar_container: {
       backgroundColor: green[400]
@@ -22,5 +23,9 @@ export const headerStyles = makeStyles((theme) => ({
     },
     quit_button: {
       backgroundColor:lightBlue[500]
+    },
+    help_btn: {
+      width:70,
+      height:70
     }
 }));

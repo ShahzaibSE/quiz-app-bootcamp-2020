@@ -5,10 +5,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
 import IconButton from '@material-ui/core/IconButton';
-import {PowerOffSharp} from "@material-ui/icons"
-
+import {HelpOutlined} from "@material-ui/icons";
 //Assets.
 import {headerStyles} from "./Header.style"
+import crown_image from "./../images/crown.png"
 
 const Header = () => {
     const classes = headerStyles()
@@ -17,10 +17,16 @@ const Header = () => {
             <Grid item xs={12} md={12} lg={12}>
                 <div>
                     <AppBar position="fixed" className={classes.app_bar_container}>
-                        <Toolbar style={{margin:"auto"}}>
+                        <Toolbar style={{margin:"auto"}}> 
+                        <IconButton className={classes.help_btn} disabled={true}>
+                              <HelpOutlined/>
+                            </IconButton>  
                         <Typography variant="h5" className={classes.title}>
-                            Treasure Chest
+                            The Trivia
                         </Typography>
+                        <IconButton className={classes.help_btn} disabled={true}>
+                              <HelpOutlined/>
+                            </IconButton> 
                             {/* <Fab aria-label="Quit Quiz" className={classes.quit_button}>
                                 <IconButton>
                                     <PowerOffSharp style={{color:"color:'rgba(255, 255, 255, 0.8)'"}}/>
