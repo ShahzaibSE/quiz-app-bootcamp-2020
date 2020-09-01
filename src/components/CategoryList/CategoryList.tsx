@@ -289,7 +289,7 @@ const CategoryList = () => {
         <Fade>
         <div>   
             <div className="difficulty_container">
-                <Grid container spacing={1} alignItems="center" justify="center">
+                <Grid container spacing={3} alignItems="center" justify="center">
                     <Grid item sm={2} md={2} lg={2}>
                         <AnimationWrapper config={{
                                             transform:{initial:'scale(1)',onHover:'scale(1.1)'},
