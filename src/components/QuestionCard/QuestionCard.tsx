@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Radio from '@material-ui/core/Radio';
@@ -64,10 +64,10 @@ const QuestionCard: React.FC<QuestionProps> = ({question, answers, questionNum, 
                     </Typography>
                     <Typography className={classes.question_text} variant="h5">{decode(question)}</Typography>
                     <RadioGroup className={classes.form_container} 
-                                aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
+                                aria-label="quiz" name="quiz" value={decode(value)} onChange={handleRadioChange}>
                         {answers.map(answer => (  
-                            <FormControlLabel key={answer} value={answer} control={<Radio onChange={callback} />} 
-                                    label={answer} />       
+                            <FormControlLabel key={decode(answer)} value={decode(answer)} control={<Radio onChange={callback} />} 
+                                    label={decode(answer)} />       
                         ))}
                     </RadioGroup>
                 </CardContent>
