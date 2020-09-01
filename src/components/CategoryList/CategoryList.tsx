@@ -236,7 +236,7 @@ const CategoryList = () => {
 
     // --- //
     if (isScoreCard) {
-        return (<Scorecard score={score} totalQuestions={total_questions} />)
+        return (<Fade><Scorecard score={score} totalQuestions={total_questions} /></Fade>)
     }
     else if (isQuiz) {
         return(
@@ -290,7 +290,7 @@ const CategoryList = () => {
         <div>   
             <div className="difficulty_container">
                 <Grid container spacing={1} alignItems="center" justify="center">
-                    <Grid item sm={12} md={4} lg={4}>
+                    <Grid item sm={2} md={2} lg={2}>
                         <AnimationWrapper config={{
                                             transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                             opacity: {initial:'1',onHover:'1'}
@@ -300,7 +300,7 @@ const CategoryList = () => {
                                 onClick={()=>{select_difficulty('easy')}}>EASY</Button>
                         </AnimationWrapper>    
                     </Grid>
-                    <Grid item sm={12} md={4} lg={4}>
+                    <Grid item sm={2} md={2} lg={2}>
                         <AnimationWrapper config={{
                                             transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                             opacity: {initial:'1',onHover:'1'}
@@ -310,7 +310,7 @@ const CategoryList = () => {
                                     onClick={()=>{select_difficulty('medium')}}>MEDIUM</Button>
                         </AnimationWrapper>            
                     </Grid>
-                    <Grid item sm={12} md={4} lg={4}>
+                    <Grid item sm={2} md={2} lg={2}>
                         <AnimationWrapper config={{
                                             transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                             opacity: {initial:'1',onHover:'1'}

@@ -27,12 +27,21 @@
 /* --- CSS for Difficulty Buttons --- */
 
 .difficulty_container {
-    margin:120px auto;
+    // Old CSS
+    // margin:120px auto;
+    //
+    margin-top:120px;
+    padding-left:10px;
+    padding-right:10px;
+    // margin-left:10px;
     // margin-left: 37px;
     // margin: auto;
-    width: 40%;
+    // Old CSS
+    // width: 40%;
+    //
     // border: 3px solid green;
-    padding: 10px;  
+    // Old CSS
+    // padding: 10px;  
 }
 
 .button_dimensions {
